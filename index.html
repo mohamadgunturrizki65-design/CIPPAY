@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment - Mohamad Guntur Rizki</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
+  body{
+    min-height:100vh;
+    background:#0a0a0f;
+    background-image: radial-gradient(at 20% 30%, #1d2bff 0px, transparent 50%),
+                      radial-gradient(at 80% 70%, #00d4ff 0px, transparent 50%),
+                      radial-gradient(at 50% 50%, #7c3aed 0px, transparent 70%);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px; color:#fff;
+  }
+  .card{
+    width:100%; max-width:420px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(20px);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:28px;
+    padding:28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .header{text-align:center;margin-bottom:26px}
+  .badge{
+    display:inline-block;
+    background: linear-gradient(90deg,#00d4ff,#7c3aed);
+    padding:6px 14px;border-radius:100px;
+    font-size:11px;font-weight:700;letter-spacing:1px;
+  }
+  .header h1{margin:14px 0 6px;font-size:26px;font-weight:700}
+  .header p{font-size:13px;color:rgba(255,255,255,0.6)}
+  
+  .pay-box{
+    background: rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:16px;
+    margin-bottom:14px;
+    position:relative;
+    transition:0.3s;
+  }
+  .pay-box:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-2px)}
+  .pay-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .pay-name{font-weight:700;display:flex;align-items:center;gap:8px}
+  .pay-name span.logo{
+    width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+    font-size:12px;font-weight:800;
+  }
+  .dana .logo{background:#118eea;color:#fff}
+  .seabank .logo{background:#fff;color:#000}
+  .pay-num{font-size:20px;font-weight:700;letter-spacing:0.5px;margin:6px 0}
+  .pay-owner{font-size:12px;color:rgba(255,255,255,0.5)}
+  .btn-copy{
+    background:#fff;color:#000;border:none;
+    padding:8px 14px;border-radius:100px;
+    font-size:12px;font-weight:700;cursor:pointer;
+    transition:0.2s;
+  }
+  .btn-copy:active{transform:scale(0.95)}
+  
+  .note{
+    background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(124,58,237,0.15));
+    border:1px dashed rgba(255,255,255,0.2);
+    border-radius:14px;padding:12px;text-align:center;
+    font-size:12px;color:rgba(255,255,255,0.8);margin:18px 0;
+  }
+  .btn-tele{
+    width:100%;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background: linear-gradient(90deg,#2AABEE,#229ED9);
+    color:#fff;text-decoration:none;
+    padding:16px;border-radius:16px;
+    font-weight:700;font-size:15px;
+    box-shadow:0 10px 20px rgba(42,171,238,0.3);
+    transition:0.3s;
+  }
+  .btn-tele:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(42,171,238,0.4)}
+  .footer{text-align:center;margin-top:18px;font-size:11px;color:rgba(255,255,255,0.3)}
+  .toast{
+    position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);
+    background:#fff;color:#000;padding:12px 20px;border-radius:100px;
+    font-size:13px;font-weight:600;opacity:0;transition:0.4s;pointer-events:none;
+  }
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <div class="badge">PAYMENT GATEWAY</div>
+    <h1>Bayar di sini</h1>
+    <p>Silakan transfer sesuai nominal, lalu kirim bukti</p>
+  </div>
+
+  <!-- DANA -->
+  <div class="pay-box dana">
+    <div class="pay-top">
+      <div class="pay-name"><span class="logo">DANA</span> DANA</div>
+      <button class="btn-copy" onclick="copyText('085189110206')">Salin</button>
+    </div>
+    <div class="pay-num" id="dana">085189110206</div>
+    <div class="pay-owner">a.n MOHAMAD GUNTUR RIZKI</div>
+  </div>
+
+  <!-- SEABANK -->
+  <div class="pay-box seabank">
+    <div class="pay-top">
+      <div class="pay-name"><span class="logo">SEA</span> SeaBank</div>
+      <button class="btn-copy" onclick="copyText('901586888270')">Salin</button>
+    </div>
+    <div class="pay-num">901586888270</div>
+    <div class="pay-owner">a.n MOHAMAD GUNTUR RIZKI</div>
+  </div>
+
+  <div class="note">
+    ⚠️ WAJIB sertakan bukti transfer melalui Telegram di bawah
+  </div>
+
+  <a class="btn-tele" href="https://t.me/cipaaajaya
